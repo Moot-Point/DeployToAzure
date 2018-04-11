@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= 'US Presidents since 1977.'
+  ul
+    each winner in winners
+      li= winner.number + ' President of the United States, ' + winner.name + ', years:' + winner.year + '.'
