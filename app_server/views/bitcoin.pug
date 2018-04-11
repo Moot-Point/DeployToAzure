@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= 'Bit coin price changes of the years.'
+  p='Price range indicates rapid fluctuation at the time'
+  ul
+    each price in prices
+      li= price.time + ',   ' + price.change + '.'

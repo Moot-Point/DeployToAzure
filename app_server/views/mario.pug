@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= 'All Mario games up until 2017.'
+  ul
+    each game in games
+      li= game.year + ', ' + game.name + '.'
+  p='Thats a lot of games.'
