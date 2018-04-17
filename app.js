@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 require('./app_api/models/db');
+require('./app_server/models/db');
 
 const index = require('./app_server/routes/index');
 const apiRoutes = require('./app_api/routes/indexApi'); // new routes for the api
