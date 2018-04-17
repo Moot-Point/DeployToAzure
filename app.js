@@ -5,7 +5,11 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+require('./app_api/models/db');
+
 const index = require('./app_server/routes/index');
+const apiRoutes = require('./app_api/routes/indexApi'); // new routes for the api
+
 var users = require('./app_server/routes/users');
 var pasi = require('./app_server/routes/pasi');
 
@@ -24,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/api', apiRoutes); // all api routes will start with "/api"
+
 app.use('/users', users);
 app.use('/pasi', pasi);
 
