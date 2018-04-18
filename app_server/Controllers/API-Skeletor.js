@@ -1,9 +1,16 @@
+/* This is a skeleton for API requests from the mean course.
+* "request(options, callback(functions))"
+* URL is required, its the path to the site. required.
+* method can be get,post,put,delete. not required, defaults to get.
+* json. the body of the request as a java object. empty object sent if no data is needed. required.
+* a javascript object representing any query string parameters, not required.
+*/
 const request = require('request');
 const apiURL = require('./apiURLs');
 
-const presidentList = function(req, res){
+const <LIST NAME HERE> = function(req, res){
 
-  const path = '/api/presidents'; // IMPORTANT
+  const path = '/api/<API PATH HERE>';
   const requestOptions = {
     url : apiURL.server + path,
     method : 'GET',
@@ -22,11 +29,10 @@ const presidentList = function(req, res){
       } else if (!body.length) {
         res.render('error', {messaege: 'No documents in collection'});
       } else {
-        res.render('president', {winners: body}); // IMPORTANT
+        res.render('bitcoin', {prices: body}); // IMPORTANT
       }
   });
 };
-
 module.exports = {
-    presidentList
+  <LIST NAME HERE>
 };

@@ -1,15 +1,43 @@
 doctype html
+html(lang="en")
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    a(href='/') Home - Random information
-    br
-    a(href='/presidents') US Presidents
-    br
-    a(href='/mario') Various Mario games
-    br
-    a(href='/bitcoin') Fluctuation of bitcoin prices of the years.
 
-    block content
+    // BOOTSTRAP
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    // BOOTSTRAP
+    // old style. link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    // NAV BAR
+    nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+      .container
+        ul.navbar-nav
+          li.nav-item
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/presidents') Presidents
+              img(src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png", alt="muricah", style="width: 30px")
+          li.nav-item
+            a.nav-link(href='/mario') Mario
+              img(src="https://ih0.redbubble.net/image.233015298.5685/flat,800x800,075,f.u1.jpg", alt=",Mario", style="width: 30px")
+
+            li.nav-item
+              a.nav-link(href='/bitcoin') Bitcoin
+                img(src="https://cointelegraph.com/storage/uploads/view/1ce2f935afa26ebcb64bbe86a6599be0.png", alt="bitcoin", style="width: 30px")
+
+    // more bootsrap
+    script (src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script (src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script (src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+
+    .container
+      block content
+      // footer
+      footer
+        .row
+          .col-12
+            small Pasi Marttila. Images may be subject to &copy.
