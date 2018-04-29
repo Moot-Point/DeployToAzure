@@ -12,4 +12,9 @@ router.get('/presidents', ctrlPresident.presidentList);  // get president list
 router.get('/mario', ctrlMario.marioList);  // get mario game list
 router.get('/bitcoin', ctrlBitcoin.bitcoinList);  // get bitcoin price list
 
+router
+  .route('/mario/add')
+  .get(ctrlMario.showForm)  // Display form
+  .post(ctrlMario.addData); // Get form data and make API call
+
 module.exports = router;

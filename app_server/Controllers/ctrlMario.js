@@ -1,6 +1,35 @@
 const request = require('request');
 const apiURL = require('./apiURLs');
 
+const showForm = function(req,res){
+  res.render('mario_add');
+};
+
+const addData = function(req, res){
+  const path = '/api/mario';
+
+  const postdata = {
+    year: req.body.year,
+    name: req.body.name
+  };
+
+  const requestOptions = {
+    url : apiURL.server + path,
+    method : 'POST',
+    json : postdata
+  };
+  request(
+    requestOptions,
+    function (err, response){
+      if (response.statusCode === 201) {
+        res.redirect('/mario');
+      } else {
+        res.render('error', {message: 'Error adding data: ' + response.statusMessage + ' ('+ response.statusCode + ')' });
+      }
+    }
+  );
+};
+
 const marioList = function(req, res){
 
   const path = '/api/mario'; // IMPORTANT
@@ -28,5 +57,7 @@ const marioList = function(req, res){
 };
 
 module.exports = {
-  marioList
+  marioList,
+  showForm,
+  addData
 };
